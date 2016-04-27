@@ -1,0 +1,81 @@
+﻿Build started 4/26/2016 11:35:52 PM.
+     1>Project "C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\halftone.vcxproj" on node 2 (Build target(s)).
+     1>AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /DWIN64 /DNDEBUG /D_CONSOLE /D_MBCS /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I. /FIcuda_runtime.h /c C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\kernel.cu 
+       CudaBuild:
+         Compiling CUDA source file kernel.cu...
+         cmd.exe /C "C:\Users\Administrator\AppData\Local\Temp\2\tmpc0645ba4558f419ba1c81265d2f93629.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MT " -o x64\Release\kernel.cu.obj "C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\kernel.cu"
+         
+         C:\Users\Administrator\Source\Repos\halftone-cuda\halftone>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MT " -o x64\Release\kernel.cu.obj "C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\kernel.cu" 
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(44): warning : integer conversion resulted in a change of sign
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(91): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(97): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(106): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(112): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(122): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(128): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(134): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(142): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(44): warning : integer conversion resulted in a change of sign
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(91): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(97): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(106): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(112): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(122): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(128): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(134): warning : transfer of control bypasses initialization of:
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(142): warning : transfer of control bypasses initialization of:
+         kernel.cu
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(101): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220): warning C4533: initialization of 'outsize' is skipped by 'goto error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(149) : see declaration of 'outsize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+     1>C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220): warning C4533: initialization of 'insize' is skipped by 'goto error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(148) : see declaration of 'insize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(149) : see declaration of 'outsize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(148) : see declaration of 'insize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(149) : see declaration of 'outsize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(148) : see declaration of 'insize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(149) : see declaration of 'outsize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(148) : see declaration of 'insize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(149) : see declaration of 'outsize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(148) : see declaration of 'insize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(149) : see declaration of 'outsize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(148) : see declaration of 'insize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(149) : see declaration of 'outsize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(148) : see declaration of 'insize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(149) : see declaration of 'outsize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(148) : see declaration of 'insize'
+                 C:/Users/Administrator/Source/Repos/halftone-cuda/halftone/kernel.cu(220) : see declaration of 'error'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\x64\Release\halftone.exe" /NOLOGO /LIBPATH:opencv2 /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64" /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64" opencv_highgui249.lib opencv_core249.lib IlmImf.lib libjasper.lib libjpeg.lib libtiff.lib libpng.lib zlib.lib cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\x64\Release\halftone.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\x64\Release\halftone.lib" /MACHINE:X64 x64\Release\kernel.cu.obj
+         LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
+         halftone.vcxproj -> C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\x64\Release\halftone.exe
+       PostBuildEvent:
+         echo copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart*.dll" "C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\x64\Release\"
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart*.dll" "C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\x64\Release\"
+         :VCEnd
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart*.dll" "C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\x64\Release\"
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart32_75.dll
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64_75.dll
+                 2 file(s) copied.
+     1>Done Building Project "C:\Users\Administrator\Source\Repos\halftone-cuda\halftone\halftone.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:09.90
