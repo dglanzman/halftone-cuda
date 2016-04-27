@@ -94,28 +94,12 @@ __global__ void halftone(char * input, dim3 size) {
 	int dis_sq = (global_x - mid_x) * (global_x - mid_x) + (global_y - mid_y) * (global_y - mid_y);
 	char color;
 	if (dis_sq < sum) {
-		printf("color=0\n");
 		color = 0;
 	} else {
-		printf("color=255\n");
 		color = 255;
 	}
 	if (global_x < size.x && global_y < size.y) {
 		input[global_idx] = color;
-	}
-}
-
-__global__ void bw(char * img, dim3 size) {
-	int x = blockDim.x * blockIdx.x + threadIdx.x;
-	int y = blockDim.y * blockIdx.y + threadIdx.y;
-	int g = y * size.x + x;
-	int avg = 0;
-	for (int i = 0; i < 3; i++) {
-		avg += img[3*g + i];
-	}
-	avg /= 3;
-	for (int i = 0; i < 3; i++) {
-		img[3 * g + i] = avg;
 	}
 }
 
@@ -139,15 +123,10 @@ int main(int argc, char ** args) {
 	int cols = input_image.cols;
 
 	// malloc buffers and memcopy input data
-	char * input, *output;
+	char * input;
 	char * channels[3];
 	char * rotated[3];
 	cuda_status = cudaMalloc((void**)&input, 3 * rows * cols);
-	if (cuda_status != cudaSuccess) {
-		fprintf(stderr, "cudaMalloc failed!");
-		goto error;
-	}
-	cuda_status = cudaMalloc((void**)&output, 3 * rows * cols);
 	if (cuda_status != cudaSuccess) {
 		fprintf(stderr, "cudaMalloc failed!");
 		goto error;
@@ -274,7 +253,7 @@ int main(int argc, char ** args) {
 
 	// merge channels back into tricolor image and sync
 	blocks = rows * cols * 3 / maxThreads + 1;
-	merge <<< blocks, maxThreads >>> (channels[0], channels[1], channels[2], output, rows * cols * 3);
+	merge <<< blocks, maxThreads >>> (channels[0], channels[1], channels[2], input, rows * cols * 3);
 	cuda_status = cudaGetLastError();
 	if (cuda_status != cudaSuccess) {
 		fprintf(stderr, "merge launch failed: %s\n", cudaGetErrorString(cuda_status));
@@ -286,16 +265,8 @@ int main(int argc, char ** args) {
 		goto error;
 	}
 
-	/*
-	dim3 bwdim(cols/32, rows/32, 1);
-	dim3 bwblk(32, 32, 1);
-	dim3 bwsize(cols, rows, 1);
-	bw<<<bwdim, bwblk>>>(input, bwsize);
-	cudaDeviceSynchronize();
-	*/
-
 	// copy image back to host and write out to file
-	cudaMemcpy(input_image.data, output, rows * cols * 3, cudaMemcpyDeviceToHost);
+	cudaMemcpy(input_image.data, input, rows * cols * 3, cudaMemcpyDeviceToHost);
 	if (cuda_status != cudaSuccess) {
 		fprintf(stderr, "cudaMemcpy failed!");
 		goto error;
